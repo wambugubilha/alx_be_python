@@ -11,18 +11,18 @@ operation = input("Choose the operation (+, -, *, /): ").strip()
 match operation:
     case '+':
         result = num1 + num2
-        print(f"The result of addition is: {result}")
+        print(f"The result is: {result}")
     case '-':
         result = num1 - num2
-        print(f"The result of subtraction is: {result}")
+        print(f"The result is: {result}")
     case '*':
         result = num1 * num2
-        print(f"The result of multiplication is: {result}")
+        print(f"The result is: {result}")
     case '/':
         if num2 == 0:
             print("Error: Division by zero is not allowed.")
         else:
             result = num1 / num2
-            print(f"The result of division is: {result}")
+            print(f"The result is: {result}")
     case _:
         print("Invalid operation selected.")
