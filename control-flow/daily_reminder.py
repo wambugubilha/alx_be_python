@@ -2,11 +2,11 @@
 
 # Prompt for task details
 task = input("Enter your task: ")
-priority = input("Enter task’s priority (high, medium, low): ").strip().lower()
+Priority = input("Enter task’s priority (high, medium, low): ").strip().lower()
 time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
 
 # Generate base reminder based on priority
-match priority:
+match Priority:
     case "high":
         reminder = f"🔴 High priority task: {task}."
     case "medium":
