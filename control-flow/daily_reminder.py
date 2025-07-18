@@ -25,4 +25,4 @@ else:
 
 # Print the customized reminder
 print("\n📌 Reminder:")
-print(reminder)
+print(f"Reminder: {reminder}")
