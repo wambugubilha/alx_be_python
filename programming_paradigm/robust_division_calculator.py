@@ -4,7 +4,7 @@ def safe_divide(numerator, denominator):
         num = float(numerator)
         den = float(denominator)
         result = num / den
-        return f"Result: {result:.2f}"
+        return f"Result: {result:.1f}"
     except ValueError:
         return "Error: Please enter numeric values only."
     except ZeroDivisionError:
