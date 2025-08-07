@@ -8,6 +8,9 @@ class Book:
     def get_details(self):
         return f"Title: {self.title}, Author: {self.author}"
 
+    def __str__(self):
+        return self.get_details()
+
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -17,6 +20,9 @@ class EBook(Book):
     def get_details(self):
         return f"{super().get_details()}, File Size: {self.file_size}MB"
 
+    def __str__(self):
+        return self.get_details()
+
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
@@ -25,6 +31,9 @@ class PrintBook(Book):
 
     def get_details(self):
         return f"{super().get_details()}, Pages: {self.page_count}"
+
+    def __str__(self):
+        return self.get_details()
 
 
 class Library:
@@ -42,4 +51,4 @@ class Library:
             print("Library is empty.")
         else:
             for idx, book in enumerate(self.books, start=1):
-                print(f"{idx}. {book.get_details()}")
+                print(f"{idx}. {book}")
