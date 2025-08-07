@@ -5,23 +5,17 @@ class Book:
         self.title = title
         self.author = author
 
-    def get_details(self):
-        return f"Title: {self.title}, Author: {self.author}"
-
     def __str__(self):
-        return self.get_details()
+        return f"Book: {self.title} by {self.author}"
 
 
 class EBook(Book):
-    def __init__(self, title, author, file_size):
+    def __init__(self, title, author, file_size_kb):
         super().__init__(title, author)
-        self.file_size = file_size  # in MB
-
-    def get_details(self):
-        return f"{super().get_details()}, File Size: {self.file_size}MB"
+        self.file_size_kb = file_size_kb  # in KB
 
     def __str__(self):
-        return self.get_details()
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size_kb}KB"
 
 
 class PrintBook(Book):
@@ -29,11 +23,8 @@ class PrintBook(Book):
         super().__init__(title, author)
         self.page_count = page_count
 
-    def get_details(self):
-        return f"{super().get_details()}, Pages: {self.page_count}"
-
     def __str__(self):
-        return self.get_details()
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 class Library:
@@ -47,8 +38,5 @@ class Library:
             print("Only Book instances can be added.")
 
     def list_books(self):
-        if not self.books:
-            print("Library is empty.")
-        else:
-            for idx, book in enumerate(self.books, start=1):
-                print(f"{idx}. {book}")
+        for book in self.books:
+            print(book)
